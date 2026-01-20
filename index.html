@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowvix - UX/UI Design & Web Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nosifer&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-progress" id="navProgress"></div>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-flow">Flow</span>
+                <span class="logo-vix">Vix</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">
+                    <span class="nav-link-text">Home</span>
+                    <span class="nav-link-indicator"></span>
+                </a></li>
+                <li><a href="#chi-siamo" class="nav-link">
+                    <span class="nav-link-text">Chi Siamo</span>
+                    <span class="nav-link-indicator"></span>
+                </a></li>
+                <li><a href="#servizi" class="nav-link">
+                    <span class="nav-link-text">Servizi</span>
+                    <span class="nav-link-indicator"></span>
+                </a></li>
+                <li><a href="#portfolio" class="nav-link">
+                    <span class="nav-link-text">Portfolio</span>
+                    <span class="nav-link-indicator"></span>
+                </a></li>
+                <li><a href="#contatti" class="nav-link">
+                    <span class="nav-link-text">Contatti</span>
+                    <span class="nav-link-indicator"></span>
+                </a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="nav-social">
+                    <a href="#" class="nav-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="nav-social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="nav-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="nav-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span>Flowvix</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span class="title-arrow">=></span>
+                        <span>UX/UI Design</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-arrow">=></span>
+                        <span>Web Development</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-arrow">=></span>
+                        <span class="highlight">Esperienze Digitali</span>
+                    </span>
+                </h1>
+                <p class="hero-subtitle">
+                    UX, UI e sviluppo web per siti che funzionano davvero. Partiamo da un’analisi del tuo sito per capire cosa migliorare — o cosa rifare da zero.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">Vedi Portfolio</a>
+                    <a href="#contatti" class="btn btn-secondary">Inizia un Progetto</a>
+                </div>
+            </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-visual-content">
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                    <div class="hero-code">
+                        <div class="code-line">
+                            <span class="code-keyword">const</span>
+                            <span class="code-variable">flowvix</span>
+                            <span class="code-operator">=</span>
+                            <span class="code-string">'digital experiences'</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-keyword">return</span>
+                            <span class="code-function">transform</span>
+                            <span class="code-bracket">(</span>
+                            <span class="code-variable">ideas</span>
+                            <span class="code-bracket">)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Chi Siamo Section -->
+    <section id="chi-siamo" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Chi Siamo</span>
+                <h2 class="section-title">Creatori di Esperienze Digitali</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        Flowvix è un'agenzia specializzata in <strong>UX/UI Design</strong> e <strong>Web Development</strong>, 
+                        dove creatività e tecnologia si fondono per creare soluzioni digitali innovative.
+                    </p>
+                    <p>
+                        Con anni di esperienza nel settore, trasformiamo le visioni dei nostri clienti in realtà digitali 
+                        che non solo sono belle da vedere, ma anche funzionali, intuitive e orientate ai risultati.
+                    </p>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                    <path d="M2 17l10 5 10-5"></path>
+                                    <path d="M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <h4>Innovazione</h4>
+                            <p>Utilizziamo le tecnologie più avanzate per creare soluzioni all'avanguardia</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <h4>Qualità</h4>
+                            <p>Ogni progetto è curato nei minimi dettagli per garantire eccellenza</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h4>Collaborazione</h4>
+                            <p>Lavoriamo a stretto contatto con i clienti per raggiungere i loro obiettivi</p>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="10">0</div>
+                            <div class="stat-label">Progetti Completati</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">Clienti Soddisfatti</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="2">0</div>
+                            <div class="stat-label">Anni di Esperienza</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-cards">
+                        <div class="about-card mission-card">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </div>
+                                <h3>La Nostra Mission</h3>
+                                <p>Creare esperienze digitali che non solo funzionano perfettamente, ma che emozionano e lasciano un'impronta duratura.</p>
+                            </div>
+                        </div>
+                        <div class="about-card vision-card">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <h3>La Nostra Vision</h3>
+                                <p>Essere il punto di riferimento per l'innovazione digitale, trasformando ogni progetto in un successo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi Section -->
+    <section id="servizi" class="section services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Servizi</span>
+                <h2 class="section-title">Cosa Offriamo</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3>UX/UI Design</h3>
+                    <p>Design di interfacce intuitive e accattivanti che migliorano l'esperienza utente e aumentano le conversioni.</p>
+                    <ul class="service-features">
+                        <li>Wireframing & Prototyping</li>
+                        <li>Design System</li>
+                        <li>User Research</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Sviluppo di siti web moderni, performanti e responsive utilizzando le tecnologie più avanzate.</p>
+                    <ul class="service-features">
+                        <li>Frontend & Backend</li>
+                        <li>E-Commerce</li>
+                        <li>API Integration</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Brand Identity</h3>
+                    <p>Creazione di identità visive coerenti che comunicano i valori e la personalità del tuo brand.</p>
+                    <ul class="service-features">
+                        <li>Logo Design</li>
+                        <li>Brand Guidelines</li>
+                        <li>Visual Identity</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="12" x2="18" y2="12"></line>
+                            <polyline points="15 19 12 22 9 19"></polyline>
+                            <polyline points="9 5 12 2 15 5"></polyline>
+                            <line x1="12" y1="22" x2="12" y2="2"></line>
+                        </svg>
+                    </div>
+                    <h3>Digital Strategy</h3>
+                    <p>Strategie digitali personalizzate per massimizzare la presenza online e raggiungere i tuoi obiettivi.</p>
+                    <ul class="service-features">
+                        <li>SEO & SEM</li>
+                        <li>Content Strategy</li>
+                        <li>Analytics & Reporting</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Mobile App</h3>
+                    <p>Sviluppo di applicazioni mobile native e cross-platform per iOS e Android.</p>
+                    <ul class="service-features">
+                        <li>iOS & Android</li>
+                        <li>React Native</li>
+                        <li>App Store Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Consulting</h3>
+                    <p>Consulenza strategica per ottimizzare la tua presenza digitale e migliorare le performance.</p>
+                    <ul class="service-features">
+                        <li>Digital Audit</li>
+                        <li>Performance Optimization</li>
+                        <li>Technical Consulting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">I Nostri Lavori</h2>
+                <p class="section-subtitle">Esplora i progetti che abbiamo realizzato per i nostri clienti</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-card-image portfolio-card-1"></div>
+                    <div class="portfolio-card-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Piattaforma e-commerce completa con design moderno e funzionalità avanzate</p>
+                        <div class="portfolio-card-tags">
+                            <span>E-Commerce</span>
+                            <span>Web Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-card-image portfolio-card-2"></div>
+                    <div class="portfolio-card-content">
+                        <h3>Corporate Website</h3>
+                        <p>Sito aziendale responsive con CMS personalizzato e SEO ottimizzato</p>
+                        <div class="portfolio-card-tags">
+                            <span>Corporate</span>
+                            <span>CMS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-card-image portfolio-card-3"></div>
+                    <div class="portfolio-card-content">
+                        <h3>Mobile App Design</h3>
+                        <p>App mobile con UX ottimizzata per iOS e Android</p>
+                        <div class="portfolio-card-tags">
+                            <span>Mobile</span>
+                            <span>UX/UI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-card-image portfolio-card-4"></div>
+                    <div class="portfolio-card-content">
+                        <h3>Brand Identity</h3>
+                        <p>Identità visiva completa per startup tech con logo e brand guidelines</p>
+                        <div class="portfolio-card-tags">
+                            <span>Branding</span>
+                            <span>Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-card-image portfolio-card-5"></div>
+                    <div class="portfolio-card-content">
+                        <h3>Web Application</h3>
+                        <p>Applicazione web complessa con dashboard avanzata e API integrate</p>
+                        <div class="portfolio-card-tags">
+                            <span>Web App</span>
+                            <span>Development</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-card-image portfolio-card-6"></div>
+                    <div class="portfolio-card-content">
+                        <h3>Landing Page</h3>
+                        <p>Landing page ad alta conversione per campagne marketing</p>
+                        <div class="portfolio-card-tags">
+                            <span>Landing</span>
+                            <span>Marketing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti Section -->
+    <section id="contatti" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contatti</span>
+                <h2 class="section-title">Inizia un Progetto</h2>
+                <p class="section-subtitle">Scegli il percorso più adatto alle tue esigenze</p>
+            </div>
+            <div class="contact-options">
+                <div class="contact-option-card">
+                    <div class="option-header">
+                        <div class="option-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="3" x2="9" y2="21"></line>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                            </svg>
+                        </div>
+                        <h3>Vuoi un Nuovo Sito?</h3>
+                        <p>Raccontaci la tua idea e creiamo insieme il sito dei tuoi sogni</p>
+                    </div>
+                    <form class="contact-form" id="newSiteForm">
+                        <div class="form-group">
+                            <label for="new-name">Nome</label>
+                            <input type="text" id="new-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-email">Email</label>
+                            <input type="email" id="new-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-subject">Tipo di Progetto</label>
+                            <select id="new-subject" name="subject" required>
+                                <option value="">Seleziona un'opzione</option>
+                                <option value="Sito Web">Sito Web</option>
+                                <option value="E-Commerce">E-Commerce</option>
+                                <option value="Web App">Web Application</option>
+                                <option value="Mobile App">Mobile App</option>
+                                <option value="Brand Identity">Brand Identity</option>
+                                <option value="Altro">Altro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-message">Raccontaci il Tuo Progetto</label>
+                            <textarea id="new-message" name="message" rows="4" placeholder="Descrivi la tua idea, obiettivi e requisiti..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Richiedi Preventivo</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-option-card">
+                    <div class="option-header">
+                        <div class="option-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                        </div>
+                        <h3>Hai Già un Sito?</h3>
+                        <p>Ricevi un'analisi gratuita e scopri come migliorarlo</p>
+                        <span class="option-badge">Analisi Gratuita</span>
+                    </div>
+                    <form class="contact-form" id="consultingForm">
+                        <div class="form-group">
+                            <label for="consult-name">Nome</label>
+                            <input type="text" id="consult-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="consult-email">Email</label>
+                            <input type="email" id="consult-email" name="email" required>
+                        </div>
+                        <div class="form-group form-group-highlight">
+                            <label for="consult-website">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="label-icon">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                </svg>
+                                Link del Tuo Sito
+                            </label>
+                            <input type="url" id="consult-website" name="website" placeholder="https://tuosito.com" pattern="https?://.*" required>
+                            <small class="form-hint">Inserisci il link del tuo sito per ricevere un'analisi gratuita e dettagliata</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="consult-message">Cosa Vorresti Migliorare?</label>
+                            <textarea id="consult-message" name="message" rows="4" placeholder="Descrivi le tue esigenze o problemi..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Richiedi Analisi Gratuita</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="contact-intro">
+                <p class="contact-intro-text">Puoi trovarci, chiamarci e scriverci cliccando su...</p>
+            </div>
+            <div class="contact-info-section">
+                <div class="contact-cards">
+                    <a href="https://maps.google.com/?q=Locri+via+Dromo+141+89044+Italia" target="_blank" class="contact-card" rel="noopener noreferrer">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Indirizzo</h3>
+                        <p>Locri, via Dromo, n 141, 89044, Italia</p>
+                    </a>
+                    <a href="tel:+393208235081" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <h3>Telefono</h3>
+                        <p>+393208235081</p>
+                    </a>
+                    <a href="mailto:info@flowvix.com" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p>info@flowvix.com</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>FlowVix</h3>
+                    <p>Trasformiamo idee in esperienze digitali straordinarie</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigazione</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#chi-siamo">Chi Siamo</a></li>
+                            <li><a href="#servizi">Servizi</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#contatti">Contatti</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Servizi</h4>
+                        <ul>
+                            <li><a href="#servizi">UX/UI Design</a></li>
+                            <li><a href="#servizi">Web Development</a></li>
+                            <li><a href="#servizi">Brand Identity</a></li>
+                            <li><a href="#servizi">Digital Strategy</a></li>
+                            <li><a href="#servizi">Mobile App</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contatti</h4>
+                        <ul>
+                            <li><a href="mailto:info@flowvix.com">info@flowvix.com</a></li>
+                            <li><a href="tel:+391234567890">+3274597773</a></li>
+                            <li>Locri, Italia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-scrolling-text">
+                <div class="scrolling-text-wrapper">
+                    <div class="scrolling-text-content">
+                        <span class="scrolling-word">Web Design</span>
+                        <span class="scrolling-separator">•</span>
+                        <span class="scrolling-word">UX/UI</span>
+                        <span class="scrolling-separator">•</span>
+                        <span class="scrolling-word">Siti Web</span>
+                        <span class="scrolling-separator">•</span>
+                        <span class="scrolling-word">Brand Identity</span>
+                        <span class="scrolling-separator">•</span>
+                        <span class="scrolling-word">Idee</span>
+                        <span class="scrolling-separator">•</span>
+                        <span class="scrolling-word">Web Design</span>
+                        <span class="scrolling-separator">•</span>
+                        <span class="scrolling-word">UX/UI</span>
+                        <span class="scrolling-separator">•</span>
+                        <span class="scrolling-word">Siti Web</span>
+                        <span class="scrolling-separator">•</span>
+                        <span class="scrolling-word">Brand Identity</span>
+                        <span class="scrolling-separator">•</span>
+                        <span class="scrolling-word">Idee</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 FlowVix. Tutti i diritti riservati.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <span>•</span>
+                        <a href="#">Termini di Servizio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Popup -->
+    <div class="whatsapp-popup" id="whatsappPopup">
+        <div class="whatsapp-popup-content">
+            <div class="whatsapp-popup-header">
+                <div class="whatsapp-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                </div>
+                <button class="whatsapp-close" id="whatsappClose">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="whatsapp-popup-body">
+                <h3>Scrivici su WhatsApp</h3>
+                <p>Contattaci direttamente per qualsiasi domanda o richiesta</p>
+                <a href="https://wa.me/393274597773" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <span>Apri WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <button class="whatsapp-float" id="whatsappFloat" aria-label="Apri WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
