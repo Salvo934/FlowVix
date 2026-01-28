@@ -331,34 +331,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// WhatsApp Popup
-const whatsappFloat = document.getElementById('whatsappFloat');
-const whatsappPopup = document.getElementById('whatsappPopup');
-const whatsappClose = document.getElementById('whatsappClose');
-
-if (whatsappFloat && whatsappPopup && whatsappClose) {
-    whatsappFloat.addEventListener('click', () => {
-        whatsappPopup.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-
-    whatsappClose.addEventListener('click', () => {
-        whatsappPopup.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-
-    whatsappPopup.addEventListener('click', (e) => {
-        if (e.target === whatsappPopup) {
-            whatsappPopup.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && whatsappPopup.classList.contains('active')) {
-            whatsappPopup.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-}
