@@ -284,7 +284,7 @@ a, button {
 
 /* Instagram hover */
 .nav-social-link[aria-label="Instagram"]:hover {
-    color: #E4405F;
+    color:  #FF00FF;
 }
 
 .nav-social-link[aria-label="Instagram"]:hover::before {
@@ -363,11 +363,12 @@ a, button {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
     padding: 120px 20px 80px;
     overflow: hidden;
+    padding-top: 100px;
 }
 
 .hero-background {
@@ -430,25 +431,32 @@ a, button {
 }
 
 .hero-content {
-    max-width: 1200px;
+    max-width: 1280px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.05fr 0.95fr;
     gap: 5rem;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     z-index: 1;
+    margin: 0 auto;
+    padding-top: 2rem;
 }
 
 .hero-text {
     animation: fadeInUp 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    padding-right: 2rem;
 }
 
 .hero-badge {
     display: inline-block;
     padding: 0.625rem 1.5rem;
-    background: rgba(255, 0, 255, 0.15);
-    border: 1px solid rgba(255, 0, 255, 0.4);
+    background: rgba(255, 0, 255, 0.12);
+    border: 1px solid rgba(255, 0, 255, 0.35);
     border-radius: 50px;
     color: var(--color-magenta);
     font-size: 0.875rem;
@@ -459,7 +467,15 @@ a, button {
     animation: fadeInUp 0.8s ease-out 0.2s both;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3), inset 0 0 20px rgba(255, 0, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.25), inset 0 0 20px rgba(255, 0, 255, 0.08);
+    align-self: flex-start;
+    transition: var(--transition);
+}
+
+.hero-badge:hover {
+    background: rgba(255, 0, 255, 0.18);
+    border-color: rgba(255, 0, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 .hero-badge::before {
@@ -482,19 +498,26 @@ a, button {
     font-family: 'Nosifer', cursive;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 2rem;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     position: relative;
     filter: drop-shadow(0 0 30px rgba(255, 0, 255, 0.2));
+    max-width: 100%;
 }
 
 .title-line {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
+    gap: 1.25rem;
+    margin-bottom: 0.875rem;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.title-line:hover {
+    transform: translateX(4px);
 }
 
 .title-arrow {
@@ -534,24 +557,27 @@ a, button {
 }
 
 .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--color-gray-lighter);
     margin-bottom: 2.5rem;
     line-height: 1.8;
     font-weight: 400;
-    max-width: 95%;
+    max-width: 100%;
     animation: fadeInUp 0.8s ease-out 0.4s both;
+    letter-spacing: 0.01em;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
     animation: fadeInUp 0.8s ease-out 0.6s both;
+    align-items: center;
+    margin-top: 0.5rem;
 }
 
 .btn {
-    padding: 1rem 2rem;
+    padding: 1.1rem 2.25rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -562,6 +588,7 @@ a, button {
     gap: 0.5rem;
     border: 2px solid transparent;
     cursor: pointer;
+    letter-spacing: 0.3px;
 }
 
 .btn-primary {
@@ -669,8 +696,13 @@ a, button {
 
 .hero-visual {
     position: relative;
-    height: 500px;
+    height: 520px;
     animation: fadeIn 1s ease-out 0.3s both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 2rem;
 }
 
 .hero-visual-content {
@@ -680,23 +712,33 @@ a, button {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 480px;
 }
 
 .hero-code {
     position: absolute;
     bottom: 20%;
-    right: 10%;
-    background: rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(255, 0, 255, 0.4);
-    border-radius: 16px;
-    padding: 1.75rem;
-    backdrop-filter: blur(15px);
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 0, 255, 0.35);
+    border-radius: 18px;
+    padding: 2rem;
+    backdrop-filter: blur(20px);
     font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.9;
     z-index: 2;
     animation: fadeIn 1s ease-out 0.6s both, float-code 6s ease-in-out infinite;
-    box-shadow: 0 8px 32px rgba(255, 0, 255, 0.2), inset 0 0 20px rgba(255, 0, 255, 0.05);
+    box-shadow: 0 10px 40px rgba(255, 0, 255, 0.25), inset 0 0 25px rgba(255, 0, 255, 0.08);
+    max-width: 85%;
+    margin: 0 auto;
+    transition: var(--transition);
+}
+
+.hero-code:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(255, 0, 255, 0.35), inset 0 0 30px rgba(255, 0, 255, 0.12);
 }
 
 .hero-code::before {
@@ -777,33 +819,36 @@ a, button {
 }
 
 .shape-1 {
-    width: 350px;
-    height: 350px;
+    width: 280px;
+    height: 280px;
     background: var(--color-magenta);
-    top: 10%;
+    top: 20%;
     left: 10%;
     animation-delay: 0s;
     color: var(--color-magenta);
+    opacity: 0.3;
 }
 
 .shape-2 {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background: var(--color-magenta-light);
     top: 50%;
-    right: 20%;
+    right: 10%;
     animation-delay: 2s;
     color: var(--color-magenta-light);
+    opacity: 0.28;
 }
 
 .shape-3 {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
     background: var(--color-magenta);
-    bottom: 10%;
-    left: 30%;
+    bottom: 20%;
+    left: 20%;
     animation-delay: 4s;
     color: var(--color-magenta);
+    opacity: 0.3;
 }
 
 .scroll-indicator {
@@ -880,6 +925,7 @@ a, button {
 .about {
     position: relative;
     overflow: hidden;
+    background: linear-gradient(180deg, var(--color-black) 0%, rgba(10, 10, 10, 0.5) 50%, var(--color-black) 100%);
 }
 
 .about::before {
@@ -890,52 +936,83 @@ a, button {
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--color-magenta), transparent);
-    opacity: 0.3;
+    opacity: 0.4;
+}
+
+.about::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.08) 0%, transparent 70%);
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: float 20s ease-in-out infinite;
 }
 
 .about-content {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 5rem;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 6rem;
     align-items: start;
+    position: relative;
+    z-index: 1;
 }
 
 .about-text .lead {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--color-white);
-    margin-bottom: 2rem;
-    line-height: 1.8;
+    margin-bottom: 2.25rem;
+    line-height: 1.85;
     font-weight: 500;
+    letter-spacing: -0.01em;
 }
 
 .about-text .lead strong {
     color: var(--color-magenta);
     font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.about-text .lead strong::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-magenta), transparent);
+    opacity: 0.5;
 }
 
 .about-text p {
     color: var(--color-gray-lighter);
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     line-height: 1.9;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
 }
 
 .values-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
 }
 
 .value-item {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 0, 255, 0.1);
-    border-radius: 16px;
-    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 0, 255, 0.15);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
     text-align: center;
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .value-item::before {
@@ -945,92 +1022,180 @@ a, button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), transparent);
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.12), rgba(255, 0, 255, 0.05));
     opacity: 0;
+    transition: var(--transition);
+    border-radius: 20px;
+}
+
+.value-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-magenta), var(--color-magenta-light));
+    transform: scaleX(0);
+    transform-origin: left;
     transition: var(--transition);
 }
 
 .value-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-magenta);
-    box-shadow: 0 10px 30px rgba(255, 0, 255, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255, 0, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(255, 0, 255, 0.2);
 }
 
 .value-item:hover::before {
     opacity: 1;
 }
 
+.value-item:hover::after {
+    transform: scaleX(1);
+}
+
 .value-icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 1rem;
-    background: rgba(255, 0, 255, 0.1);
-    border-radius: 12px;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.15), rgba(255, 0, 255, 0.08));
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-magenta);
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     z-index: 1;
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.1);
 }
 
 .value-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.4));
+    transition: var(--transition);
 }
 
 .value-item:hover .value-icon {
-    background: rgba(255, 0, 255, 0.2);
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(255, 0, 255, 0.15));
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.4), inset 0 0 20px rgba(255, 0, 255, 0.1);
+    border-color: rgba(255, 0, 255, 0.5);
+}
+
+.value-item:hover .value-icon svg {
+    filter: drop-shadow(0 0 12px rgba(255, 0, 255, 0.6));
 }
 
 .value-item h4 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.875rem;
     color: var(--color-white);
     position: relative;
     z-index: 1;
     letter-spacing: -0.01em;
+    transition: var(--transition);
+}
+
+.value-item:hover h4 {
+    color: var(--color-magenta-light);
+    transform: translateY(-2px);
 }
 
 .value-item p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--color-gray-lighter);
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
     position: relative;
     z-index: 1;
+    transition: var(--transition);
+}
+
+.value-item:hover p {
+    color: var(--color-white);
 }
 
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 0, 255, 0.1);
 }
 
 .stat-item {
     text-align: center;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 0, 255, 0.08);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.05), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    border-color: rgba(255, 0, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 0, 255, 0.15);
+}
+
+.stat-item:hover::before {
+    opacity: 1;
 }
 
 .stat-number {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 900;
-    background: linear-gradient(135deg, var(--color-magenta) 0%, var(--color-magenta-light) 100%);
+    background: linear-gradient(135deg, var(--color-magenta) 0%, var(--color-magenta-light) 50%, var(--color-magenta) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 0.5rem;
-    filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.3));
+    background-size: 200% auto;
+    margin-bottom: 0.75rem;
+    filter: drop-shadow(0 0 15px rgba(255, 0, 255, 0.4));
     line-height: 1;
+    position: relative;
+    z-index: 1;
+    animation: shimmer 3s linear infinite;
+    transition: var(--transition);
+}
+
+.stat-item:hover .stat-number {
+    filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.6));
+    transform: scale(1.05);
 }
 
 .stat-label {
     color: var(--color-gray-lighter);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.stat-item:hover .stat-label {
+    color: var(--color-white);
 }
 
 .about-visual {
@@ -1047,21 +1212,38 @@ a, button {
 }
 
 .about-card {
-    background: linear-gradient(135deg, rgba(255, 0, 255, 0.12), rgba(255, 0, 255, 0.06));
-    border: 1px solid rgba(255, 0, 255, 0.25);
-    border-radius: 24px;
-    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), rgba(255, 0, 255, 0.05));
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    border-radius: 28px;
+    padding: 3rem;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(255, 0, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 40px rgba(255, 0, 255, 0.12);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-magenta), var(--color-magenta-light));
+    transform: scaleX(0);
+    transform-origin: left;
     transition: var(--transition);
 }
 
 .about-card:hover {
-    border-color: rgba(255, 0, 255, 0.4);
-    box-shadow: 0 12px 40px rgba(255, 0, 255, 0.25);
-    transform: translateY(-6px);
+    border-color: rgba(255, 0, 255, 0.45);
+    box-shadow: 0 20px 50px rgba(255, 0, 255, 0.3), inset 0 0 30px rgba(255, 0, 255, 0.05);
+    transform: translateY(-8px) scale(1.01);
+}
+
+.about-card:hover::before {
+    transform: scaleX(1);
 }
 
 .mission-card {
@@ -1088,28 +1270,54 @@ a, button {
 }
 
 .card-icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 0, 255, 0.15);
-    border-radius: 16px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(255, 0, 255, 0.1));
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-magenta);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(255, 0, 255, 0.25);
+    box-shadow: 0 6px 20px rgba(255, 0, 255, 0.15);
+    position: relative;
+}
+
+.card-icon::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--color-magenta), var(--color-magenta-light));
+    opacity: 0;
     transition: var(--transition);
-    border: 1px solid rgba(255, 0, 255, 0.2);
+    z-index: -1;
+    filter: blur(8px);
 }
 
 .card-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.5));
+    transition: var(--transition);
 }
 
 .about-card:hover .card-icon {
-    background: rgba(255, 0, 255, 0.25);
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 25px rgba(255, 0, 255, 0.4);
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.35), rgba(255, 0, 255, 0.2));
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 0 35px rgba(255, 0, 255, 0.5), inset 0 0 25px rgba(255, 0, 255, 0.15);
+    border-color: rgba(255, 0, 255, 0.5);
+}
+
+.about-card:hover .card-icon::before {
+    opacity: 0.6;
+}
+
+.about-card:hover .card-icon svg {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 255, 0.8));
+    transform: scale(1.1);
 }
 
 .about-card h3 {
@@ -1122,13 +1330,20 @@ a, button {
 }
 
 .about-card:hover h3 {
-    color: var(--color-magenta);
+    color: var(--color-magenta-light);
+    transform: translateY(-2px);
+    text-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
 }
 
 .about-card p {
     color: var(--color-gray-lighter);
-    line-height: 1.9;
+    line-height: 1.85;
     font-size: 1rem;
+    transition: var(--transition);
+}
+
+.about-card:hover p {
+    color: var(--color-white);
 }
 
 /* Services Section */
@@ -1298,14 +1513,16 @@ a, button {
 
 .portfolio-card {
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 0, 255, 0.2);
-    border-radius: 24px;
+    border: 1px solid rgba(255, 0, 255, 0.12);
+    border-radius: 28px;
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     display: flex;
     flex-direction: column;
     position: relative;
     cursor: pointer;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .portfolio-card::before {
@@ -1327,35 +1544,42 @@ a, button {
 }
 
 .portfolio-card:hover {
-    border-color: rgba(255, 0, 255, 0.5);
-    transform: translateY(-12px);
+    border-color: rgba(255, 0, 255, 0.35);
+    transform: translateY(-16px) scale(1.02);
     box-shadow: 
-        0 25px 50px rgba(255, 0, 255, 0.3),
-        0 0 0 1px rgba(255, 0, 255, 0.1) inset;
+        0 30px 60px rgba(255, 0, 255, 0.3),
+        0 0 0 1px rgba(255, 0, 255, 0.2) inset,
+        0 0 80px rgba(255, 0, 255, 0.15);
     background: rgba(255, 255, 255, 0.05);
 }
 
 .portfolio-card-image {
     width: 100%;
-    height: 260px;
+    height: 280px;
     background-size: cover;
     background-position: center;
     position: relative;
     overflow: hidden;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.portfolio-card:hover .portfolio-card-image {
+    transform: scale(1.05);
 }
 
 .portfolio-card-image::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2) 0%, transparent 70%);
     opacity: 0;
     transition: var(--transition);
-    z-index: 1;
+    z-index: 2;
 }
 
 .portfolio-card:hover .portfolio-card-image::before {
-    opacity: 1;
+    opacity: 0.6;
 }
 
 .portfolio-card-image::after {
@@ -1364,56 +1588,238 @@ a, button {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 50%;
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
-    opacity: 0;
+    height: 60%;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    opacity: 0.8;
     transition: var(--transition);
-    z-index: 2;
+    z-index: 1;
 }
 
 .portfolio-card:hover .portfolio-card-image::after {
-    opacity: 1;
+    opacity: 0.95;
 }
 
 .portfolio-card-1 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 255, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 51, 255, 0.08) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 26, 26, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card-1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 0, 255, 0.02) 2px, rgba(255, 0, 255, 0.02) 4px);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.portfolio-card-1::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+}
+
+.portfolio-card:hover .portfolio-card-1::after {
+    opacity: 0.4;
 }
 
 .portfolio-card-2 {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #f093fb 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite 1s;
+    background: 
+        radial-gradient(circle at 70% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 30% 80%, rgba(255, 51, 255, 0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(26, 26, 26, 0.92) 50%, rgba(10, 10, 10, 0.98) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card-2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(255, 0, 255, 0.015) 3px, rgba(255, 0, 255, 0.015) 6px);
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.portfolio-card-2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.12) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+}
+
+.portfolio-card:hover .portfolio-card-2::after {
+    opacity: 0.35;
 }
 
 .portfolio-card-3 {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #4facfe 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite 2s;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 10% 10%, rgba(255, 51, 255, 0.05) 0%, transparent 40%),
+        linear-gradient(135deg, rgba(26, 26, 26, 0.94) 0%, rgba(0, 0, 0, 0.96) 50%, rgba(26, 26, 26, 0.94) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card-3::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(255, 0, 255, 0.02) 4px, rgba(255, 0, 255, 0.02) 8px);
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.portfolio-card-3::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.14) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+}
+
+.portfolio-card:hover .portfolio-card-3::after {
+    opacity: 0.4;
 }
 
 .portfolio-card-4 {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 50%, #43e97b 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite 3s;
+    background: 
+        radial-gradient(circle at 25% 75%, rgba(255, 0, 255, 0.1) 0%, transparent 55%),
+        radial-gradient(circle at 75% 25%, rgba(255, 51, 255, 0.07) 0%, transparent 45%),
+        linear-gradient(135deg, rgba(0, 0, 0, 0.97) 0%, rgba(10, 10, 10, 0.95) 50%, rgba(0, 0, 0, 0.97) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card-4::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(135deg, transparent, transparent 2px, rgba(255, 0, 255, 0.018) 2px, rgba(255, 0, 255, 0.018) 4px);
+    opacity: 0.28;
+    z-index: 0;
+}
+
+.portfolio-card-4::after {
+    content: '';
+    position: absolute;
+    top: 75%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 51, 255, 0.13) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+}
+
+.portfolio-card:hover .portfolio-card-4::after {
+    opacity: 0.38;
 }
 
 .portfolio-card-5 {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 50%, #fa709a 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite 4s;
+    background: 
+        radial-gradient(circle at 60% 40%, rgba(255, 0, 255, 0.11) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(255, 51, 255, 0.06) 0%, transparent 48%),
+        linear-gradient(135deg, rgba(10, 10, 10, 0.96) 0%, rgba(26, 26, 26, 0.93) 50%, rgba(10, 10, 10, 0.96) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card-5::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(-135deg, transparent, transparent 3px, rgba(255, 0, 255, 0.016) 3px, rgba(255, 0, 255, 0.016) 6px);
+    opacity: 0.22;
+    z-index: 0;
+}
+
+.portfolio-card-5::after {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: 30%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.16) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+}
+
+.portfolio-card:hover .portfolio-card-5::after {
+    opacity: 0.42;
 }
 
 .portfolio-card-6 {
-    background: linear-gradient(135deg, #30cfd0 0%, #330867 50%, #30cfd0 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite 5s;
+    background: 
+        radial-gradient(circle at 40% 50%, rgba(255, 0, 255, 0.09) 0%, transparent 52%),
+        radial-gradient(circle at 90% 10%, rgba(255, 51, 255, 0.05) 0%, transparent 45%),
+        linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(0, 0, 0, 0.97) 50%, rgba(26, 26, 26, 0.95) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card-6::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(255, 0, 255, 0.02) 5px, rgba(255, 0, 255, 0.02) 10px);
+    opacity: 0.24;
+    z-index: 0;
+}
+
+.portfolio-card-6::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    right: -20%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 51, 255, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+}
+
+.portfolio-card:hover .portfolio-card-6::after {
+    opacity: 0.4;
 }
 
 .portfolio-card-content {
     padding: 2rem;
     position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .portfolio-card-content h3 {
@@ -1422,11 +1828,14 @@ a, button {
     color: var(--color-white);
     margin-bottom: 0.875rem;
     letter-spacing: -0.02em;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-card:hover .portfolio-card-content h3 {
     color: var(--color-magenta-light);
+    transform: translateX(4px);
+    text-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
 }
 
 .portfolio-card-content p {
@@ -1449,21 +1858,23 @@ a, button {
 
 .portfolio-card-tags span {
     padding: 0.5rem 1rem;
-    background: rgba(255, 0, 255, 0.12);
-    border: 1px solid rgba(255, 0, 255, 0.25);
+    background: rgba(255, 0, 255, 0.1);
+    border: 1px solid rgba(255, 0, 255, 0.2);
     border-radius: 25px;
-    color: var(--color-magenta);
+    color: var(--color-magenta-light);
     font-size: 0.8rem;
     font-weight: 600;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     letter-spacing: 0.3px;
+    backdrop-filter: blur(10px);
 }
 
 .portfolio-card:hover .portfolio-card-tags span {
-    background: rgba(255, 0, 255, 0.2);
-    border-color: rgba(255, 0, 255, 0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 0, 255, 0.2);
+    background: rgba(255, 0, 255, 0.25);
+    border-color: rgba(255, 0, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 0, 255, 0.3);
+    color: var(--color-white);
 }
 
 .portfolio-item::before {
@@ -1491,35 +1902,35 @@ a, button {
 }
 
 .portfolio-item:nth-child(1) .portfolio-image {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.15) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 .portfolio-item:nth-child(2) .portfolio-image {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(255, 0, 255, 0.12) 100%);
 }
 
 .portfolio-item:nth-child(3) .portfolio-image {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.1) 0%, rgba(26, 26, 26, 0.85) 100%);
 }
 
 .portfolio-item:nth-child(4) .portfolio-image {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(255, 0, 255, 0.1) 100%);
 }
 
 .portfolio-item:nth-child(5) .portfolio-image {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.12) 0%, rgba(10, 10, 10, 0.92) 100%);
 }
 
 .portfolio-item:nth-child(6) .portfolio-image {
-    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.88) 0%, rgba(255, 0, 255, 0.1) 100%);
 }
 
 .portfolio-item:nth-child(7) .portfolio-image {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.08) 0%, rgba(0, 0, 0, 0.9) 100%);
 }
 
 .portfolio-item:nth-child(8) .portfolio-image {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(255, 51, 255, 0.1) 100%);
 }
 
 .portfolio-overlay {
@@ -2842,14 +3253,40 @@ a, button {
     color: var(--color-gray-lighter);
     text-decoration: none;
     transition: var(--transition);
-    display: inline-block;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.625rem;
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .footer-column ul li a:hover {
     color: var(--color-magenta);
     transform: translateX(5px);
 }
+
+.footer-column ul li a br {
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.footer-link-icon {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    margin-top: 3px;
+    color: var(--color-magenta);
+    opacity: 0.7;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.footer-column ul li a:hover .footer-link-icon {
+    opacity: 1;
+    color: var(--color-magenta-light);
+    transform: scale(1.1);
+}
+
 
 .footer-scrolling-text {
     padding: 2.5rem 0;
@@ -3322,7 +3759,12 @@ a, button {
 
 
     .hero {
-        padding: 100px 20px 60px;
+        padding: 90px 20px 50px;
+        align-items: flex-start;
+    }
+    
+    .hero-content {
+        padding-top: 1rem;
     }
 
     .hero-content {
@@ -3519,20 +3961,47 @@ a, button {
 
     .hero-content {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 3.5rem;
         text-align: center;
         max-width: 100%;
         width: 100%;
+        align-items: center;
+    }
+    
+    .hero-text {
+        padding-right: 0;
+        align-items: center;
+    }
+    
+    .hero-visual {
+        padding-left: 0;
     }
 
     .hero-text {
         width: 100%;
         max-width: 100%;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-badge {
+        align-self: center;
     }
 
     .hero-visual {
-        display: none;
+        display: flex;
+        height: 300px;
+        margin-top: 2rem;
+    }
+    
+    .hero-code {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        left: auto;
+        max-width: 100%;
     }
 
     .hero-badge {
